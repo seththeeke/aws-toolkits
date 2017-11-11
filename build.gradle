@@ -21,6 +21,7 @@ project(':ec2-service') {
 	} 
 	dependencies {
 		compile project(':aws-services-resources')
+		compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.228'
 		compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.2.0'
 	}
 }
