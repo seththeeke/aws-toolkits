@@ -17,7 +17,7 @@ import com.services.email.objects.Email;
 public class EmailRestService {
 
 	public static void main(String[] args) {
-		AWSAccessConfig config = ConfigFactory.create(AWSAccessConfig.class);
+		AWSConfig config = ConfigFactory.create(AWSConfig.class);
 		new EmailService(Regions.US_EAST_1, config.getAccessKey(), config.getSecretKey()).sendEmail(
 				new Email("seththeeke@gmail.com", Arrays.asList("seththeeke@gmail.com"), "testSubject", "testBody"));
 	}
@@ -32,7 +32,7 @@ public class EmailRestService {
 
 	private IAWSEmailService getEmailService() {
 		if (this.emailService == null) {
-			AWSAccessConfig config = ConfigFactory.create(AWSAccessConfig.class);
+			AWSConfig config = ConfigFactory.create(AWSConfig.class);
 			this.emailService = new EmailService(Regions.US_EAST_1, config.getAccessKey(), config.getSecretKey());
 		}
 		return this.emailService;
