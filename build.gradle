@@ -34,6 +34,7 @@ project(':aws-services-resources') {
 		mavenCentral()
 	} 
 	dependencies {
+		compile group: 'com.amazonaws', name: 'aws-java-sdk-ses', version: '1.11.228'
 		compile group: 'org.aeonbits.owner', name: 'owner', version: '1.0.4'
 	}
 }

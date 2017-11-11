@@ -10,23 +10,18 @@ import com.amazonaws.services.simpleemail.model.Content;
 import com.amazonaws.services.simpleemail.model.Destination;
 import com.amazonaws.services.simpleemail.model.Message;
 import com.amazonaws.services.simpleemail.model.SendEmailRequest;
+import com.services.AWSService;
 import com.services.interfaces.IAWSEmailService;
 import com.services.objects.Email;
 
-public class EmailService implements IAWSEmailService {
-
-	private Regions region;
-	private String accessKey;
-	private String secretKey;
+public class EmailService extends AWSService implements IAWSEmailService {
 
 	public EmailService(final Regions region, final String accessKey, final String secretKey) {
-		this.region = region;
-		this.accessKey = accessKey;
-		this.secretKey = secretKey;
+		super(region, accessKey, secretKey);
 	}
 
 	public EmailService(final Regions region) {
-		this.region = region;
+		super(region);
 	}
 
 	@Override
@@ -67,18 +62,6 @@ public class EmailService implements IAWSEmailService {
 				.withMessage(new Message().withBody(new Body().withText(new Content().withData(email.getBody())))
 						.withSubject(new Content().withData(email.getSubject())))
 				.withSource(email.getFromAddress());
-	}
-
-	public Regions getRegion() {
-		return region;
-	}
-
-	public String getAccessKey() {
-		return accessKey;
-	}
-
-	public String getSecretKey() {
-		return secretKey;
 	}
 
 }
