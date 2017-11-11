@@ -1,0 +1,13 @@
+project(':simple-email-service') {
+	apply plugin: 'java'
+	apply plugin: 'eclipse' 
+
+	repositories { 
+		mavenCentral()
+	} 
+	dependencies {
+		compile group: 'org.aeonbits.owner', name: 'owner', version: '1.0.4'
+		compile group: 'com.amazonaws', name: 'aws-java-sdk-ses', version: '1.11.228'
+		compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.2.0'
+	}
+}
