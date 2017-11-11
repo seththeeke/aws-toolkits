@@ -1,6 +1,6 @@
-package com.services.email;
+package com.services.interfaces;
 
-import com.services.email.objects.Email;
+import com.services.objects.Email;
 
 /**
  * Sends an email using Amazon Simple Email Service

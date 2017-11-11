@@ -1,4 +1,4 @@
-package com.services.email;
+package com.services.config;
 
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;

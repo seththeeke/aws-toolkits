@@ -11,7 +11,9 @@ import javax.ws.rs.core.Response;
 import org.aeonbits.owner.ConfigFactory;
 
 import com.amazonaws.regions.Regions;
-import com.services.email.objects.Email;
+import com.services.config.AWSConfig;
+import com.services.interfaces.IAWSEmailService;
+import com.services.objects.Email;
 
 @Path("/emails")
 public class EmailRestService {

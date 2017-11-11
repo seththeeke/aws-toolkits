@@ -10,7 +10,8 @@ import com.amazonaws.services.simpleemail.model.Content;
 import com.amazonaws.services.simpleemail.model.Destination;
 import com.amazonaws.services.simpleemail.model.Message;
 import com.amazonaws.services.simpleemail.model.SendEmailRequest;
-import com.services.email.objects.Email;
+import com.services.interfaces.IAWSEmailService;
+import com.services.objects.Email;
 
 public class EmailService implements IAWSEmailService {
 

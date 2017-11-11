@@ -1,4 +1,4 @@
-package com.services.email.objects;
+package com.services.objects;
 
 import java.util.List;
 
