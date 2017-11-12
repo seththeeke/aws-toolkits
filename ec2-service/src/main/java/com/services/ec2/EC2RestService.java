@@ -9,7 +9,10 @@ public class EC2RestService {
 
 	public static void main(String[] args) {
 		AWSConfig config = ConfigFactory.create(AWSConfig.class);
-		new EC2Service(Regions.US_EAST_1, config.getAccessKey(), config.getSecretKey()).createEC2Instance();
+		EC2Service ec2Service = new EC2Service(Regions.US_EAST_1, config.getAccessKey(), config.getSecretKey());
+		// ec2Service.describeEC2Instances();
+		ec2Service.createEC2Instance();
+		// ec2Service.describeEC2Instances();
 	}
 
 	private EC2Service ec2Service;
