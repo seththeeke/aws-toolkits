@@ -1,7 +1,5 @@
 package com.services.email;
 
-import java.util.Arrays;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -17,12 +15,6 @@ import com.services.objects.Email;
 
 @Path("/emails")
 public class EmailRestService {
-
-	public static void main(String[] args) {
-		AWSConfig config = ConfigFactory.create(AWSConfig.class);
-		new EmailService(Regions.US_EAST_1, config.getAccessKey(), config.getSecretKey()).sendEmail(
-				new Email("seththeeke@gmail.com", Arrays.asList("seththeeke@gmail.com"), "testSubject", "testBody"));
-	}
 
 	private IAWSEmailService emailService;
 

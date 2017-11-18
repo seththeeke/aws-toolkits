@@ -1,4 +1,4 @@
-package com.server.sms;
+package com.server.email;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -6,10 +6,10 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 import com.server.services.Services;
 
-public class SMSWebServer {
+public class EmailWebServer {
 
 	public static void main(String[] args) throws Exception {
-		Server server = new Server(8080);
+		Server server = new Server(8081);
 
 		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		context.setContextPath("/");
@@ -22,9 +22,9 @@ public class SMSWebServer {
 	}
 
 	private static void setUpServices(ServletContextHandler context) {
-		ServletHolder smsServices = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/*");
-		smsServices.setInitOrder(0);
-		smsServices.setInitParameter("jersey.config.server.provider.classnames",
+		ServletHolder emailRestServices = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/*");
+		emailRestServices.setInitOrder(0);
+		emailRestServices.setInitParameter("jersey.config.server.provider.classnames",
 				String.join(",", Services.getServices()));
 	}
 
