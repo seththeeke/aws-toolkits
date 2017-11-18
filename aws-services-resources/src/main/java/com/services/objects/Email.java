@@ -9,6 +9,9 @@ public class Email {
 	private String subject;
 	private String body;
 
+	public Email() {
+	}
+
 	public Email(String fromAddress, List<String> toAddress, String subject, String body) {
 		this.fromAddress = fromAddress;
 		this.toAddresses = toAddress;
