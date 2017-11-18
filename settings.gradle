@@ -1,4 +1,7 @@
 include 'simple-email-service'
 include 'ec2-service'
-include 'aws-services-resources'
 include 'sms-service'
+include 'simple-email-server'
+include 'ec2-server'
+include 'sms-server'
+include 'aws-services-resources'

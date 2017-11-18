@@ -40,6 +40,47 @@ project(':sms-service') {
 	}
 }
 
+
+/*********************Servers*********************/
+project(':simple-email-server') {
+	apply plugin: 'java'
+	apply plugin: 'eclipse' 
+
+	repositories { 
+		mavenCentral()
+	} 
+	dependencies {
+		compile project(':simple-email-service')
+		compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.2.0'
+	}
+}
+
+project(':ec2-server') {
+	apply plugin: 'java'
+	apply plugin: 'eclipse' 
+
+	repositories { 
+		mavenCentral()
+	} 
+	dependencies {
+		compile project(':ec2-service')
+		compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.2.0'
+	}
+}
+
+project(':sms-server') {
+	apply plugin: 'java'
+	apply plugin: 'eclipse' 
+
+	repositories { 
+		mavenCentral()
+	} 
+	dependencies {
+		compile project(':sms-service')
+		compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.2.0'
+	}
+}
+
 project(':aws-services-resources') {
 	apply plugin: 'java'
 	apply plugin: 'eclipse' 
