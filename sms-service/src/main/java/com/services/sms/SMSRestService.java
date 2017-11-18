@@ -16,14 +16,6 @@ import com.services.objects.TextMessage;
 @Path("/text-messages")
 public class SMSRestService {
 
-	public static void main(String[] args) {
-		AWSConfig config = ConfigFactory.create(AWSConfig.class);
-		SMSService smsService = new SMSService(Regions.US_EAST_1, config.getAccessKey(), config.getSecretKey());
-		TextMessage message = new TextMessage("+13043769298",
-				"Hey, It's Seth, I can text you from a computer now completely anonymously... :)");
-		smsService.sendTextMessage(message);
-	}
-
 	private ISMSService smsService;
 
 	@POST
